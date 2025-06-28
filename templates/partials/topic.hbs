@@ -1,0 +1,9 @@
+<div class="topic" id="t{{id}}">
+	<h2 class="topic-title"><a href="./viewtopic.php?f={{forumId}}&amp;t={{id}}">{{name}}</h2>
+	<div class="pagination">{{posts}} posts &bull; {{> pagination pageNumber=pageNumber totalPages=totalPages url="viewTopic-f={{forumId}}&amp;t={{id}}" }}</div>
+	<div class="postContainer">
+		{{#each posts}}
+			{{>post this}}
+		{{/each}}
+	</div>
+</div>
