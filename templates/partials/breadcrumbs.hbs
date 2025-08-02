@@ -1,0 +1,16 @@
+<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+	<li class="breadcrumbs small-icon icon-home" style="max-width: 850px">
+		<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+			<a href="index.htm" accesskey="h" data-navbar-reference="index" itemprop="url" title="Board index">
+				<span itemprop="title">Board index</span>
+			</a>
+		</span>
+		{{#if breadcrumbs}}{{#each breadcrumbs}}
+		<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+			<a href="{{{this.url}}}" itemprop="url" title="{{{this.title}}}">
+				<span itemprop="title">{{this.title}}</span>
+			</a>
+		</span>
+		{{/each}}{{/if}}
+	</li>
+</ul>

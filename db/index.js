@@ -25,6 +25,9 @@ models.Topic = Topic;
 import Forum from "./models/forum.js";
 models.Forum = Forum;
 
+import Asset from  "./models/asset.js"
+models.Asset = Asset;
+
 // Make sure we do this first, to get all the models initialized.
 for (let model in models) {
 	models[model].init(sequelize);
@@ -39,3 +42,4 @@ await sequelize.sync({
 });
 
 export default models;
+export const Op = Sequelize.Op;

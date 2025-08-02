@@ -16,8 +16,8 @@ export default class Forum extends Model {
 		}, {sequelize, modelName: "Forum", timestamps: false});
 	}
 	static relation(models) {
-		this.belongsTo(models.Forum, { as: "parent" });
-		this.hasMany(models.Forum, { as: "child" });
+		this.belongsTo(models.Forum, { as: "Parent" , foreignKey: "parentId" });
+		this.hasMany(models.Forum, { as: "Children" , foreignKey: "parentId" });
 		this.hasMany(models.Topic);
 	}
 }

@@ -1,0 +1,24 @@
+<li class="row">
+	<dl class="icon forum_read with-description">
+		<dt title="">
+			<div class="list-inner">
+				<a class="forumtitle" href="{{{link}}}" data-id="{{{id}}}">{{{name}}}</a>
+				<div class="forum-description">{{{description}}}</div>
+			</div>
+		</dt>
+		<dd class="topics">{{topicCount}}</dd>
+		<dd class="posts">{{postCount}}</dd>
+		<dd class="lastpost">
+			<span>
+				<dfn>Last post</dfn>
+				<a class="lastsubject" href="{{{lastpostlink}}}" title="{{lastpostsubject}}">{{{lastpostsubject}}}</a>
+				<br>
+				by
+				<span class="username">{{lastpostpostedBy}}</span>
+				<br>
+				{{formatDateTime lastpostpostDate}}
+			</span>
+		</dd>
+	</dl>
+	{{#if subforum}}<ul>{{{subforum}}}</ul>{{/if}}
+</li>

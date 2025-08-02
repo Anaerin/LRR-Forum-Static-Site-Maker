@@ -16,6 +16,10 @@ export default class Topic extends Model {
 			isAnnouncement: {
 				type: DataTypes.BOOLEAN,
 				defaultValue: false
+			},
+			isPinned: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false
 			}
 		}, {sequelize, modelName: "Topic", timestamps: false});
 	}

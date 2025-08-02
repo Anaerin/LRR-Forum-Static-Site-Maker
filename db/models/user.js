@@ -17,7 +17,9 @@ export default class User extends Model {
 			avatarWidth: DataTypes.INTEGER,
 			location: DataTypes.STRING,
 			rank: DataTypes.STRING,
-			firstVideo: DataTypes.STRING
+			firstVideo: DataTypes.STRING,
+			joined: DataTypes.DATE,
+			signature: DataTypes.TEXT
 		}, {sequelize, modelName: "User", timestamps: false});
 	}
 	static relation(models) {

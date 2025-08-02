@@ -1,0 +1,38 @@
+{{>pageheader}}
+<div id="wrap" class="page-width">
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" role="main">
+		<div class="navbar nav-breadcrumbs">
+			{{>breadcrumbs}}
+		</div>
+		<div class="action-bar top">
+			<div class="pagination">
+				{{topicCount}} topics
+				{{paginationBlock "topic" forumId=forumId page=page pages=pages nextprev=true}}
+			</div>
+		</div>
+		<div class="forumbg">
+			<div class="inner">
+				<ul class="topiclist">
+					<li class="header">
+						<dl class="icon">
+							<dt><div class="list-inner">Topics</div></dt>
+							<dd class="posts">Replies</dd>
+							<dd class="lastpost"><span>Last post</span></dd>
+						</dl>
+					</li>
+				</ul>
+				<ul class="topiclist topics">
+					{{{topicLines}}}
+				</ul>
+			</div>
+		</div>
+		<div class="action-bar bottom">
+			<div class="pagination">
+				{{topicCount}} topics
+				{{paginationBlock "topic" forumId=forumId page=page pages=pages nextprev=true}}
+			</div>
+		</div>
+	</div>
+</div>
+{{>pagefooter}}

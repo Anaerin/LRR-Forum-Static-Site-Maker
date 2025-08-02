@@ -1,0 +1,48 @@
+{{#*inline "userPane"}}
+<dl id="profile{{id}}" class="postprofile resized" style="z-index: 28; min-height: 143px">
+	<dt class="h{{#if rank}}as-profile-rank {{/if}}{{#if avatar}}has-avatar {{/if}}">
+		{{#if avatar}}
+		<div class="avatar-container">
+			<img class="avatar" src="{{avatar}}" width="{{avatarWidth}}" height="{{avatarHeight}}" alt="{{name}}'s avatar">
+		</div>
+		{{/if}}
+		<span class="username">{{name}}</span>
+	</dt>
+	{{#if rank}}<dd class="profile-rank">{{rank}}</dd>{{/if}}
+	<dd class="profile-posts"><strong>Posts:</strong>{{PostCount}}</dd>
+	{{#if joined}}<dd class="profile-joined"><strong>Joined:</strong>{{formatDateTime joined}}</dd>{{/if}}
+	{{#if firstVideo}}<dd class="profile-custom-field profile-firstvideo"><strong>First Video:</strong>{{firstVideo}}</dd>{{/if}}
+	{{#if location}}<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong>{{location}}</dd>{{/if}}
+</dl>
+{{/inline}}
+<div class="post has-profile" id="p{{id}}">
+	<div class="inner">
+		{{> userPane user }}
+		<div class="postbody">
+			<div id="post_content{{id}}">
+				<h3>
+					<a href="#p{{id}}">{{subject}}</a>
+				</h3>
+				<p class="author">
+					<span class="responsive-hide">
+						by
+						<strong>
+							<span class="username">{{user.name}}</span>
+						</strong>
+						&raquo;
+					</span>
+					{{formatDateTime datePosted}}
+				</p>
+				<div class="content">
+					{{{body}}}
+				</div>
+				{{#if user.signature}}
+				<div class="signature">
+					{{{user.signature}}}
+				</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	<div class="back2top"><a class="top" href="#top" title="top">Top</a></div>
+</div>
