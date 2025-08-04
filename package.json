@@ -4,13 +4,14 @@
   "description": "A parser for a phpBB site mirrored with httrack to assemble a static version of said forum offline",
   "main": "index.js",
   "type": "module",
-    "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Robert Johnston <anaerin@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.7.8",
+    "node-fetch": "^3.3.2",
     "node-html-parser": "^7.0.1",
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
