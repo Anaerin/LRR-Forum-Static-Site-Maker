@@ -3,6 +3,7 @@ const config = {
 	outputFolder: "L:/",
 	staticFolder: "static/",
 	topicsPerPage: 50,
-	postsPerPage: 25
+	postsPerPage: 25,
+	siteBase: "https://loadingreadyrun.com/forum"
 }
 export default config

@@ -28,6 +28,9 @@ models.Forum = Forum;
 import Asset from  "./models/asset.js"
 models.Asset = Asset;
 
+import MissingAsset from "./models/missingasset.js";
+models.MissingAsset = MissingAsset;
+
 // Make sure we do this first, to get all the models initialized.
 for (let model in models) {
 	models[model].init(sequelize);
