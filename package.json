@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.7.8",
+    "mysql2": "^3.14.3",
     "node-fetch": "^3.3.2",
     "node-html-parser": "^7.0.1",
     "sequelize": "^6.37.7",

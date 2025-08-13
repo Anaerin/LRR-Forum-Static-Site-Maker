@@ -1,11 +1,14 @@
 import Sequelize from "sequelize";
-
+import config from "../config.js";
 // Build our Database instance. You will probably want to change this to something more robust.
-export const sequelize = new Sequelize({
+/* const sqlSetup = {
 	dialect: "sqlite",
 	storage: "forum.sqlite",
 	logging: false//(...msg) => console.log(msg)
-});
+}; */
+const sqlSetup = config.sqlSetup;
+sqlSetup.logging = false;//(...msg) => console.log(msg)
+export const sequelize = new Sequelize(sqlSetup);
 sequelize.authenticate();
 
 // Let's have somewhere to store the data models we're using.
@@ -27,9 +30,6 @@ models.Forum = Forum;
 
 import Asset from  "./models/asset.js"
 models.Asset = Asset;
-
-import MissingAsset from "./models/missingasset.js";
-models.MissingAsset = MissingAsset;
 
 // Make sure we do this first, to get all the models initialized.
 for (let model in models) {

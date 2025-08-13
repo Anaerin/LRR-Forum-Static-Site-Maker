@@ -1,9 +1,16 @@
 const config = {
-	inputFolder: "D:/Development/LRR Forum Backup/LRR Forums/loadingreadyrun.com/forum",
+	inputFolder: "T:\\workingForum\\LRR Forums\\loadingreadyrun.com\\forum",
 	outputFolder: "L:/",
 	staticFolder: "static/",
 	topicsPerPage: 50,
 	postsPerPage: 25,
-	siteBase: "https://loadingreadyrun.com/forum"
+	siteBase: "https://loadingreadyrun.com/forum",
+	sqlSetup: {
+		dialect: "mysql",
+		host: "hostname",
+		username: "lrrForum",
+		password: "Password Goes Here, obviously",
+		database: "lrrForum"
+	}
 }
 export default config

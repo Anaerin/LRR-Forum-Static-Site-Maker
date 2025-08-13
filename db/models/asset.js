@@ -13,6 +13,10 @@ export default class Asset extends Model {
 			},
 			URL: DataTypes.STRING,
 			fileName: DataTypes.STRING,
+			isFetched: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false
+			}
 		}, {sequelize, modelName: "Asset", timestamps: false});
 	}
 }
