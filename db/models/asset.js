@@ -9,7 +9,9 @@ export default class Asset extends Model {
 		super.init({
 			id: {
 				type: DataTypes.INTEGER,
-				primaryKey: true
+				primaryKey: true,
+				autoIncrement: true,
+				allowNull: false
 			},
 			URL: DataTypes.STRING,
 			fileName: DataTypes.STRING,

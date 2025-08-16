@@ -13,7 +13,7 @@ export default class Post extends Model {
 			},
 			subject: DataTypes.STRING,
 			datePosted: DataTypes.DATE,
-			body: DataTypes.TEXT
+			body: DataTypes.TEXT("medium")
 		}, {sequelize, modelName: "Post", timestamps: false});
 	}
 	static relation(models) {
