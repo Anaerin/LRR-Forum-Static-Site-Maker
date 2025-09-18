@@ -1,17 +1,18 @@
 import { sequelize, Op } from "./db/index.js";
 import SiteParser  from "./lib/parseSite.js";
 import SiteExporter from "./lib/createSite.js";
-import { estimateTTC, renderHoldingPage } from "./lib/utils.js";
+import { estimateTTC, renderHoldingPage, copyStatic } from "./lib/utils.js";
 import WaybackRetriever from "./lib/waybackretrieval.js";
 import config from "./config.js";
 import progress from "./lib/progress.js";
 
-const parseFiles = true;
+const parseFiles = false;
 const createMirror = true;
-const findMissing = true;
-const findAssets = true;
+const findMissing = false;
+const findAssets = false;
 const fileParser = new SiteParser(sequelize);
-const siteExporter = new SiteExporter(sequelize)
+const siteExporter = new SiteExporter(sequelize);
+await siteExporter.buildAssets();
 const wayback = new WaybackRetriever();
 
 renderHoldingPage();
@@ -64,6 +65,7 @@ if (findMissing) {
 	progress.completeTask("fetchPosts");
 }
 if (createMirror) {
+	await copyStatic();
 	await siteExporter.exportForums();
 };
 
